@@ -11,4 +11,4 @@ https://gitlab.com/mrifqyz/ppw-TK2
 to be continued
 
 ## Link Figma:
-https://www.figma.com/file/BTitVNJHt2AiqACZg7buIs/duarkantin
+to be continued
