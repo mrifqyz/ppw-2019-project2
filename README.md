@@ -5,7 +5,7 @@
 4. Faza Ghani Irham
 
 ## Repository
-https://gitlab.com/mrifqyz/ppw-TK2
+https://gitlab.com/mrifqyz/ppw-tk2
 
 ## Link Heroku:
 to be continued
