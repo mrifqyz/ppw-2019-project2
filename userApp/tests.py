@@ -1,5 +1,4 @@
 from django.test import TestCase, Client
-from userApp.models import UserManager, User
 
 # Create your tests here.
 class UserAppTest(TestCase):
