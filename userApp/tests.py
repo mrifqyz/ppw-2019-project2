@@ -1,4 +1,5 @@
 from django.test import TestCase, Client
+from userApp.models import UserManager, User
 
 # Create your tests here.
 class UserAppTest(TestCase):
@@ -19,3 +20,11 @@ class UserAppTest(TestCase):
         response = c.get("/kelola")
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "kelola.html")
+
+    def test_create_user(self):
+        User.objects.create_user('mohamad.rifqy@ui.ac.id', 'Mohamad Rifqy Zulkarnaen',
+        'Tes satu satu hahaha', '087777535288', 'ssrifdiza')
+        self.assertEqual(User.objects.all().count(), 1)
+
+    
+
