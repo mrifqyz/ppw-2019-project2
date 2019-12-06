@@ -11,9 +11,9 @@ class UserAppTest(TestCase):
 
     def test_url_logout(self):
         c = Client()
-        response = c.get("/logout")
+        response = c.get("/register")
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "logout.html")
+        self.assertTemplateUsed(response, "register.html")
 
     def test_url_user_profile(self):
         c = Client()
