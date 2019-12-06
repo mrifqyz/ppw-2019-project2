@@ -17,6 +17,7 @@
     margin-bottom: 14vh;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
     min-width: 0;
+    border: 2px solid rgba(0, 0, 0, 0.1);
 }
 .full-height {
   	height: 100%;
@@ -92,5 +93,5 @@ hr {
   height: 2px;
 }
 .bgcolor {
-    background-color: #eedfde;
+    background-color: white;
 }
