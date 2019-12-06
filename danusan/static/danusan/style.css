@@ -15,7 +15,6 @@
     min-height: 65vh;
     margin-top: 13vh;
     margin-bottom: 14vh;
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.1);
     min-width: 0;
     border: 2px solid rgba(0, 0, 0, 0.1);
 }
@@ -33,46 +32,10 @@
 .pad {
 		padding: 4%;
 }
-.edge {
-    background-color: #eeeeee;
-    width: 72px;
-}
-.photo-container {
-    display: flex;
-    justify-content: center;    /*horizontal*/
-    align-items: center;        /*vertical*/
-    flex-direction: column;
-}
-.description {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;    /*vertical*/
-    text-align: center;
-}
-#photo {
-    width: 280px;
-    height: 280px;
-    border-radius: 50%;
-}
-.small-logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin: 10px;
-}
 .content {
     display: flex;
     flex-direction: column;
     width: 100%;
-}
-.logo {
-    max-width: 150px;
-    max-height: 150px;
-}
-.card {
-    border: 0px;
-    margin: 4%;
-    margin-left: 8%;
 }
 .table-col {
     width: 8%;
@@ -83,14 +46,6 @@
 h1 {
     margin-top: 4%;
     margin-left: 4%;
-}
-hr {
-  border: 0;
-  clear:both;
-  display:block;
-  width: 95%;
-  background-color: #cccccc;
-  height: 2px;
 }
 .bgcolor {
     background-color: white;
