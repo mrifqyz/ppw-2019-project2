@@ -27,3 +27,15 @@ class UnitTest(TestCase):
     def test_ada_gambar(self):
         response = Client().get('')
         self.assertContains(response, 'image.png')
+
+    def test_ada_button_sign_up(self):
+        response = Client().get('')
+        self.assertContains(response, '</button>')
+
+    def test_ada_ajakan_ngedanus(self):
+        response = Client().get('')
+        self.assertContains(response, 'Yuk bergabung dengan kami')
+
+    def test_ada_deskripsi_DNA(self):
+        response = Client().get('')
+        self.assertContains(response, 'Sebuah platform buat kamu')
