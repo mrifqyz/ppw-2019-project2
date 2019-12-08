@@ -1,8 +1,10 @@
+/* -----------------------------------------TEMPLATE STYLE----------------------------------------- */
+
 body {
-    min-height: 100vh   ;
+    color: #1b1b1b;
     font-family: 'Open Sans', sans-serif;
     font-size: 14pt;
-    color: #1b1b1b;
+    min-height: 100vh   ;
 }
 
 .navbar {
@@ -11,19 +13,35 @@ body {
     -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
     padding: .1rem 3rem;
-    z-index: 2;
 }
 
-
 footer {
-    left: 0;
+    background-color: #2f2f2f;
     bottom: 0;
+    color: #F2F2F2;
+    left: 0;
     position: absolute;
     width: 100%;
-    background-color: #2f2f2f;
-    color: #F2F2F2;
 }
 
 footer p {
     margin: 1rem 3rem;
 }
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 71vh;
+    overflow-x: hidden;
+}
+
+#nav-logo{
+        height: 40px!important  ;
+}
+
+/* -------------------------------------GENERAL CLASS SETTINGS---------------------------------------- */
+.box-container{
+    border: .25px solid #2f2f2f;
+}
+
