@@ -26,7 +26,9 @@ def loginPage(request):
 def registerPage(request):
     if(request.method == 'POST'):
         form = RegisterForm(request.POST)
+        print('tes1')
         if(form.is_valid()):
+            print('tes1')
             email = request.POST['username']
             fullname = request.POST['fullname']
             bio = request.POST['bio']
