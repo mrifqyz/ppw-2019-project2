@@ -8,7 +8,7 @@
 https://gitlab.com/mrifqyz/ppw-tk2
 
 ## Link Heroku:
-https://www.danusanyuk.herokuapp.com
+https://danusanyuk.herokuapp.com
 
 ## Link Figma:
 https://www.figma.com/proto/lOCo32RgMwXjY9gRRkOaKQ/DNA?node-id=3%3A2&scaling=min-zoom
