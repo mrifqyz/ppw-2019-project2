@@ -11,7 +11,7 @@ class UserManager(BaseUserManager):
             email = self.normalize_email(email),
             full_name=full_name,
             bio=bio,
-            phone_number=phone_number
+            phone_number=phone_number,
         )
         user_obj.set_password(password) # change user password
         user_obj.staff = is_staff
@@ -20,7 +20,7 @@ class UserManager(BaseUserManager):
         user_obj.save(using=self._db)
         return user_obj
 
-    def create_staffuser(self, email,full_name=None, bio = None, phone_number = None , password=None):
+    def create_staffuser(self, email,full_name=None, bio = None, phone_number = None, password=None):
         user = self.create_user(
                 email,
                 full_name=full_name,
@@ -49,6 +49,7 @@ class User(AbstractBaseUser):
     full_name           = models.CharField(max_length=55)
     bio                 = models.CharField(max_length=3000)
     phone_number        = models.CharField(max_length=15)
+    img                 = models.ImageField(upload_to='images/', blank=True)
     active              = models.BooleanField(default=True) # can login
     staff               = models.BooleanField(default=False) # staff user non superuser
     admin               = models.BooleanField(default=False) # superuser

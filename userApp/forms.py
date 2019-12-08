@@ -76,6 +76,13 @@ class RegisterForm(forms.Form):
         }
     ))
 
+    
+    img = forms.ImageField(label='Images', widget=forms.FileInput(
+        attrs={
+            'class':'form-control form-custom',
+        }
+    ))
+
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput(
         attrs={
             'class':'form-control form-custom',

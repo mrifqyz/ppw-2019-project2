@@ -1,5 +1,8 @@
 from django.contrib import admin
 from django.urls import path, include
+from django.conf import settings
+from django.conf.urls.static import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from userApp.views import loginPage, registerPage, signOut
 
 urlpatterns = [
@@ -11,3 +14,7 @@ urlpatterns = [
     path('', include('app1.urls')),
     path('dfj90d21lf@34a12', signOut, name='logout')
 ]
+
+if settings.DEBUG:
+    urlpatterns += staticfiles_urlpatterns()
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

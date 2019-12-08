@@ -102,6 +102,19 @@ footer p {
     text-align: center;
 }
 
+.img-circle{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.img-circle img{
+    width: 100%;
+    height: auto;
+}
+
 /* ----------------------------------------SPECIFIC SETTINGS------------------------------------------- */
 #notlogin{
     max-width: 30vh;

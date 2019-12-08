@@ -2,7 +2,16 @@
 {% load static %}
 {% block content %}
     {% if user.is_authenticated %}
-        <p>Halo, {{user.get_full_name}}</p>
+    {% if user.userprofile.image %}
+    <div class="img-circle">
+        <img src="{{user.img.url}}" alt="">
+    </div>
+    {% else %}
+    <div class="img-circle">
+        <img src="{% static 'favicon.png' %}" alt="">
+    </div>
+    {% endif %}
+    <p>Halo, {{user.get_full_name}}</p>
     {% else %}
         <div class="content flex-col-center">
             <img src="{% static 'notLogin.png' %}" alt="" id="notlogin">
