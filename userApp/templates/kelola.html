@@ -1,0 +1,9 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block content %}
+    {% if user.is_authenticated %}
+        <p>Halo, {{user.get_full_name}}</p>
+    {% else %}
+        <p>kamu belum login!</p>
+    {% endif %}
+{% endblock %}

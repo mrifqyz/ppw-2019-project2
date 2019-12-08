@@ -1,0 +1,32 @@
+{% extends 'footer.html' %}
+{% load static %}
+{% block content %}
+    <div class="box-container flex-col-center mw200">
+        <div class="logo-container m-5">
+            <a href="{% url 'home' %}">
+                <img src="{% static 'dna.png' %}" alt="" id="logo">
+            </a>
+        </div>
+        <div class="form-container ">
+            <form action="" method="POST" class="flex-col-center">
+                {% csrf_token %}
+                <div class="form-unit my-1 mx-4">
+                    {{form.username}}
+                </div>
+
+                <div class="form-unit my-1 mx-4">
+                    {{form.password}}
+                </div>
+
+                <div class="form-unit mt-3 mb-5 mx-4 ">
+                    <button type="submit" class="btn btn-submit">Sign in</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="box-container flex-col-center mw200 mt-3">
+        <p class='m-4'>Belum punya akun? <a href="{% url 'register' %}">Buat akun</a></p>
+    </div>
+{% endblock %}

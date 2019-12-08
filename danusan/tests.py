@@ -1,7 +1,7 @@
 from django.test import TestCase, Client
 from .models import Danusan
 
-from django.contrib.auth.models import User
+from userApp.models import User
 
 # Create your tests here.
 class UnitTest(TestCase):
@@ -31,7 +31,8 @@ class UnitTest(TestCase):
 		self.assertIn("submit", content)
 
 	def setUp(self):
-		self.user = User.objects.create_user('temporary', 'temporary@gmail.com', 'temporary')
+		self.user = User.objects.create_user('mohamad.rifqy@ui.ac.id', 'Mohamad Rifqy Zulkarnaen',
+        'Tes satu satu hahaha', '087777535288', 'ssrifdiza')
 
 	# def test_apakah_ada_model_danusan_dengan_field_image_name_price_dan_user(self):
 	def test_apakah_ada_model_danusan_dengan_field_image_name_dan_price(self):
@@ -57,7 +58,8 @@ class FunctionalTest(StaticLiveServerTestCase):
 		self.browser = webdriver.Chrome('./chromedriver', chrome_options=options)
 		self.browser.get(self.live_server_url + "/danusan/")
 
-		user = User.objects.create_user('temporary', 'temporary@gmail.com', 'temporary')
+		user = User.objects.create_user('mohamad.rifqy@ui.ac.id', 'Mohamad Rifqy Zulkarnaen',
+        'Tes satu satu hahaha', '087777535288', 'ssrifdiza')
 
 	# def test_secure_page(self):
 	# 	self.client.login(username='temporary', password='temporary')
