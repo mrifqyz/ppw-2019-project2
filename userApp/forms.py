@@ -45,15 +45,50 @@ class UserAdminChangeForm(forms.ModelForm):
         # field does not have access to the initial value
         return self.initial["password"]
 
-class RegisterForm(forms.ModelForm):
+class RegisterForm(forms.Form):
     """A form for creating new users. Includes all the required
     fields, plus a repeated password."""
-    password1 = forms.CharField(label='Password', widget=forms.PasswordInput)
-    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput)
+    username = forms.CharField(label='E-mail', widget=forms.EmailInput(
+        attrs={
+            'class':'form-control form-custom',
+            'placeholder':'E-mail' 
+        }
+    ))
 
-    class Meta:
-        model = User
-        fields = ('full_name', 'email',) #'full_name',)
+    fullname = forms.CharField(label='Full Name', widget=forms.TextInput(
+        attrs={
+            'class':'form-control form-custom',
+            'placeholder':'Full name' 
+        }
+    ))
+
+    bio = forms.CharField(label='Bio', max_length=1000, widget=forms.TextInput(
+        attrs={
+            'class':'form-control form-custom',
+            'placeholder':'Bio' 
+        }
+    ))
+
+    phone = forms.CharField(label='Phone Number', min_length=8, widget=forms.TextInput(
+        attrs={
+            'class':'form-control form-custom',
+            'placeholder':'Phone Number' 
+        }
+    ))
+
+    password1 = forms.CharField(label='Password', widget=forms.PasswordInput(
+        attrs={
+            'class':'form-control form-custom',
+            'placeholder':'Password' 
+        }
+    ))
+
+    password2 = forms.CharField(label='Password confirmation', widget=forms.PasswordInput(
+        attrs={
+            'class':'form-control form-custom',
+            'placeholder':'Re-type Password' 
+        }
+    ))
 
     def clean_password2(self):
         # Check that the two password entries match
@@ -63,11 +98,28 @@ class RegisterForm(forms.ModelForm):
             raise forms.ValidationError("Passwords don't match")
         return password2
 
-    def save(self, commit=True):
-        # Save the provided password in hashed format
-        user = super(RegisterForm, self).save(commit=False)
-        user.set_password(self.cleaned_data["password1"])
-        # user.active = False # send confirmation email
-        if commit:
-            user.save()
-        return user
+class LoginForm(forms.Form):
+    """Form for user login. Includes username for login and password
+    for login. Also created function to test password length"""
+
+    username = forms.CharField(widget=forms.TextInput(
+        attrs={
+            'class':'form-control form-custom',
+            'placeholder':'Email'
+        }
+    ))
+
+    password = forms.CharField(min_length=8, widget=forms.PasswordInput(
+        attrs={
+            'class':'form-control form-custom',
+            'placeholder':'Password'
+        }
+    ))
+
+    def checkPassword(self):
+        password = self.cleaned_data.get('password')
+        if(len(password)<8):
+            return False
+        return True
+
+        
