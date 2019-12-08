@@ -94,6 +94,15 @@ footer p {
     font-size: 14pt;
 }
 
+.text-20{
+    font-size: 24pt;
+}
+
 .text-center{
     text-align: center;
+}
+
+/* ----------------------------------------SPECIFIC SETTINGS------------------------------------------- */
+#notlogin{
+    max-width: 30vh;
 }

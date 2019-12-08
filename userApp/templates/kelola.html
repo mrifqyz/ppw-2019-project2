@@ -4,6 +4,9 @@
     {% if user.is_authenticated %}
         <p>Halo, {{user.get_full_name}}</p>
     {% else %}
-        <p>kamu belum login!</p>
+        <div class="content flex-col-center">
+            <img src="{% static 'notLogin.png' %}" alt="" id="notlogin">
+            <b><p class="text-20 mt-3">Kamu belum login!</p></b>
+        </div>
     {% endif %}
 {% endblock %}
