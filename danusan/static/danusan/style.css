@@ -1,0 +1,52 @@
+.all-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.box-container {
+    display: flex;
+    justify-content: center;    /*horizontal*/
+    height: 100%;
+}
+.box {
+    display: flex;
+    background-color: white;
+    width: 900px;
+    min-height: 65vh;
+    margin-top: 13vh;
+    margin-bottom: 14vh;
+    min-width: 0;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+}
+.full-height {
+  	height: 100%;
+}
+.full-height-responsive {
+		height: 100%;
+}
+@media only screen and (max-width: 768px) {
+		.full-height-responsive {
+				height: 50%;
+		}
+}
+.pad {
+		padding: 4%;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.table-col {
+    width: 8%;
+}
+.table-col {
+    width: 23%;
+}
+h1 {
+    margin-top: 4%;
+    margin-left: 4%;
+}
+.bgcolor {
+    background-color: white;
+}

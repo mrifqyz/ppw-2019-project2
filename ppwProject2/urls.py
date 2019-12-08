@@ -7,4 +7,6 @@ urlpatterns = [
     path('login', loginPage, name='login'),
     path('register', registerPage, name='register'),
     path('kelola', include('userApp.urls')),
+    path('danusan/', include('danusan.urls')),
+    path('', include('app1.urls')),
 ]
