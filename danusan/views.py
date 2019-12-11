@@ -5,19 +5,22 @@ from .forms import DanusanForm
 
 from django.contrib.auth.decorators import login_required
 
+@login_required
 def index(request):
-	danusan_form = DanusanForm()
+	form = DanusanForm()
 	context = {
 		'danusans' : Danusan.objects.all(),
-		'generated_html' : danusan_form,
+		'generated_html' : form,
 	}
 	return render(request, 'index.html', context)
 
-# @login_required
+@login_required
 def add_danusan(request):
-	danusan = DanusanForm(request.POST)
-	danusan.user = request.user
-	danusan.save()
+	form = DanusanForm(request.POST)
+	if (form.is_valid()):
+		danusan = form.save(commit=False)
+		danusan.user = request.user
+		form.save()
 	return redirect(reverse('index_danusan'))
 
 # def delete_danusan(request, id):
