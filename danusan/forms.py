@@ -5,9 +5,9 @@ from .models import Danusan
 
 class DanusanForm(ModelForm):
     class Meta:
-	    model = Danusan
-	    fields = ['name', 'price', 'image']
-		widgets = {
+	   model = Danusan
+	   fields = ['name', 'price', 'image']
+	   widgets = {
 		    'name': forms.TextInput(attrs={
 		    'class': 'form-control',
 		    'id': 'name'}),
