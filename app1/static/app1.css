@@ -1,0 +1,96 @@
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: black;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #fff;
+    border: 1.5px solid #2f2f2f;
+    padding: .75rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: .5rem;
+}
+
+.btn:hover {
+    background-color: #2f2f2f;
+    color: white;
+    border: 1.5px solid #2f2f2f;
+}
+
+.card {
+    box-shadow: 3px 3px rgba(0, 0, 0, 0.1);
+    flex-basis: 25%;
+    margin-right: 5vh;
+}
+
+.danus-card-deck {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+
+.danus-img {
+    max-width: 500px;
+}
+
+.serif {
+    font-family: 'PT Serif', serif;
+}
+
+.card-body {
+    color: black;
+}
+
+.card:hover {
+    background-color: #efefef;
+}
+
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.accordion {
+    background-color: #FFFFFF;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    border: none;
+    border-bottom: 1px solid #1b1b1b;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+    padding: 0 18px;
+    background-color: #f3f3f3;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion:after {
+    content: '\02795';
+    /* Unicode character for "plus" sign (+) */
+    font-size: 13px;
+    color: #777;
+    float: right;
+    margin-left: 5px;
+    border: none;
+}
+
+.active-clicked:after {
+    content: "\2796";
+    /* Unicode character for "minus" sign (-) */
+}
