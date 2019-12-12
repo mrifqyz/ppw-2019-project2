@@ -1,6 +1,9 @@
 {% extends 'template.html' %}
 {% load static %}
 {% block content %}
+
+    <script src="{% static 'danusan/script.js' %}"></script>
+
 	<div class="box-container">
 		<div class="box">
 			<div class="content-danusan">
@@ -45,7 +48,7 @@
 										{{ danusan.price }}
 									</td>
 									<td>
-										{{ danusan.datetime }}
+										{{ danusan.datetime|date:'d/m/Y, H:i:s a' }}
 									</td>
 								</tr>
 							{% endfor %}
@@ -53,15 +56,17 @@
 						</table>
 					</div>
 				</div>
-				<h1>Tambah Danusan</h1>
-				<div class="pad" style="padding-top: 2%">
-					<form action="{% url 'add_danusan' %}" method="POST">
-						{% csrf_token %}
-						{{ generated_html }}
-						<br/>
-						<input id="button" class="btn btn-dark" type="submit" value="Tambah"/>
-					</form>
-				</div>
+				{% if user.is_authenticated %}
+					<h1>Tambah Danusan</h1>
+					<div class="pad" style="padding-top: 2%">
+						<form>
+							{% csrf_token %}
+							{{ generated_html }}
+							<br/>
+							<input id="button" class="btn btn-dark" type="submit" value="Tambah"/>
+						</form>
+					</div>
+				{% endif %}
 			</div>
 		</div>
 	</div>
