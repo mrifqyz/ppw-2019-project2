@@ -16,7 +16,7 @@ import dj_database_url
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-
+PRODUCTION = os.environ.get('DATABASE_URL') is not None
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
@@ -85,6 +85,8 @@ DATABASES = {
     }
 }
 
+if PRODUCTION:
+    DATABASES['default'] = dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -141,7 +143,3 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # LOGIN_REDIRECT_URL = '/'
 LOGIN_URL = '/login'
-
-if os.environ.get('ENVIRONMENT') == 'PRODUCTION':
-    #django_heroku.settings(locals())
-    DATABASES['default'] = dj_database_url.config()
