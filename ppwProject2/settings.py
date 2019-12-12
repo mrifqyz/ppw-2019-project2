@@ -139,6 +139,9 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'static')
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
+# LOGIN_REDIRECT_URL = '/'
+LOGIN_URL = '/login'
+
 if os.environ.get('ENVIRONMENT') == 'PRODUCTION':
     django_heroku.settings(locals())
 

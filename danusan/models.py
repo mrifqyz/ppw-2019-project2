@@ -1,6 +1,5 @@
 from django.db import models
-from django.conf import settings
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 
 # Create your models here.
 class Danusan(models.Model):
@@ -9,7 +8,8 @@ class Danusan(models.Model):
 	price = models.PositiveIntegerField(blank=False)
 	datetime = models.DateTimeField(auto_now_add = True)
 
-	user = models.ForeignKey(settings.AUTH_USER_MODEL , on_delete=models.CASCADE)
+	User = get_user_model()
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 	class Meta:
 		ordering = ['-datetime']
