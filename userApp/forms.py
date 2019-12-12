@@ -123,10 +123,4 @@ class LoginForm(forms.Form):
         }
     ))
 
-    def checkPassword(self):
-        password = self.cleaned_data.get('password')
-        if(len(password)<8):
-            return False
-        return True
-
         

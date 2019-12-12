@@ -1,21 +1,62 @@
 {% extends 'template.html' %}
 {% load static %}
 {% block content %}
-    {% if user.is_authenticated %}
-    {% if user.userprofile.image %}
-    <div class="img-circle">
-        <img src="{{user.img.url}}" alt="">
-    </div>
-    {% else %}
-    <div class="img-circle">
-        <img src="{% static 'favicon.png' %}" alt="">
-    </div>
-    {% endif %}
-    <p>Halo, {{user.get_full_name}}</p>
-    {% else %}
-        <div class="content flex-col-center">
-            <img src="{% static 'notLogin.png' %}" alt="" id="notlogin">
-            <b><p class="text-20 mt-3">Kamu belum login!</p></b>
+{% if user.is_authenticated %}
+<div class="content row m-5">
+    <div class="info-container flex-row-left">
+        <div class="col-md-2">
+            <div class="img-circle mr-4">
+                {% if user.img  %}
+                <img src="{{user.img.url}}" alt="">
+                {% else %}
+                <img src="{% static 'favicon.png' %}" alt="">
+                {% endif %}
+            </div>
         </div>
-    {% endif %}
+
+        <!-- <div class="col"> -->
+            <div class="text-container flex-col-left">
+                <b class="mb-3">
+                    <p class="text-16">{{user.get_full_name}}</p>
+                </b>
+                <p class="text-14 my-1">{{user.email}}</p>
+                <p class="text-14">{{user.phone_number}}</p>
+                <p class="my-1">{{user.bio}}</p>
+            </div>
+        <!-- </div> -->
+    </div>
+
+    <div class="content flex-col-left my-4">
+        <p class="text-24 ptserif mb-3">Danusan Kamu</p>
+        <div class="row col-12">
+            <div class="flex-row-left col-10" id="data-container">
+                <div id="data" class="row"></div>
+            </div>
+
+            <div class="btn-container flex-col-center p-5 col-2">
+                <form action="{% url 'index_danusan' %}">
+                    <button class="circle-btn btn flex-col-center" type="submit">
+                        <p>Tambah</p>
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script src="{% static 'getItem.js' %}"></script>
+
+    {% else %}
+    <div class="content flex-col-center">
+        <img src="{% static 'notLogin.png' %}" alt="" id="notlogin">
+        <b>
+            <p class="text-24 mt-3">Kamu belum login!</p>
+        </b>
+    </div>
+</div>
+{% endif %}
 {% endblock %}
