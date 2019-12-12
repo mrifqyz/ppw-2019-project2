@@ -20,6 +20,17 @@ class UnitTest(TestCase):
 		content = response.content.decode('utf8')
 		self.assertIn("<table", content)
 
+	def test_get_danusan(self):
+		#################
+		response = self.client.get('/danusan/get_danusan/')
+		self.assertEqual(response.status_code, 200)
+
+	def test_add_danusan(self):
+		#################
+		response = self.client.post('/danusan/add_danusan/',
+			{'image': "link", 'name': "Bakso", 'price': "15000"})
+		self.assertEqual(response.status_code, 200)
+
 	def test_apakah_ada_input_submit(self):
 		response = self.client.get('/danusan/')
 		content = response.content.decode('utf8')
