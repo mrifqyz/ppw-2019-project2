@@ -76,6 +76,13 @@ class RegisterForm(forms.Form):
         }
     ))
 
+    
+    # img = forms.ImageField(label='Images', widget=forms.FileInput(
+    #     attrs={
+    #         'class':'form-control form-custom',
+    #     }
+    # ))
+
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput(
         attrs={
             'class':'form-control form-custom',
@@ -115,11 +122,5 @@ class LoginForm(forms.Form):
             'placeholder':'Password'
         }
     ))
-
-    def checkPassword(self):
-        password = self.cleaned_data.get('password')
-        if(len(password)<8):
-            return False
-        return True
 
         

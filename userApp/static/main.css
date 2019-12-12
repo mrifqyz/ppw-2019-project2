@@ -92,6 +92,17 @@ footer p {
     border-radius: 2px;
 }
 
+.circle-btn{
+    border-radius: 50%;
+    background-color: #2f2f2f;
+    height: 100px;
+    width: 100px;
+}
+
+.circle-btn p{
+    color: #FFFFFF;
+}
+
 .disabled-text{
     color: #acacac;
 }
@@ -100,6 +111,62 @@ footer p {
     font-size: 14pt;
 }
 
+.text-24{
+    font-size: 24pt;
+}
+
+.text-16{
+    font-size: 16pt;
+}
+
 .text-center{
     text-align: center;
+}
+
+.img-circle{
+    position: relative;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.img-circle img{
+    width: auto;
+    height: 200px;
+}
+
+.flex-col-left{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+}
+/* 
+.text-container{
+    width: 300px;
+} */
+
+.flex-row-left{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: left;
+}
+
+.ptserif{
+    font-family: 'PT Serif', serif;
+}
+
+.card-img-top{
+    overflow-y: hidden;
+    height: 200px!important;
+}
+
+.card-img-top img{
+    width: 100%;
+}
+/* ----------------------------------------SPECIFIC SETTINGS------------------------------------------- */
+#notlogin{
+    max-width: 30vh;
 }

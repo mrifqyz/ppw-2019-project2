@@ -29,7 +29,7 @@ class UnitTest(TestCase):
 		#################
 		response = self.client.post('/danusan/add_danusan/',
 			{'image': "link", 'name': "Bakso", 'price': "15000"})
-		self.assertEqual(response.status_code, 200)
+		self.assertEqual(response.status_code, 302)
 
 	def test_apakah_ada_input_submit(self):
 		response = self.client.get('/danusan/')
