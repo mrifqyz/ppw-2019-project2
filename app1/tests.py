@@ -1,6 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import resolve
-from .views import index
+from .views import index, bantuan
 
 # Create your tests here.
 class UnitTest(TestCase):
