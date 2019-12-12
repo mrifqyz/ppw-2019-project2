@@ -12,4 +12,4 @@ class Danusan(models.Model):
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 	class Meta:
-		ordering = ['-datetime']
+		ordering = ['datetime']
