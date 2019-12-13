@@ -1,5 +1,5 @@
 from django.urls import path, re_path
-from .views import index, add_danusan, get_danusan, login#, danusanJSON#, delete_danusan
+from .views import index, add_danusan, get_danusan, login, danusanJSON#, delete_danusan
 
 urlpatterns = [
 	path('', index, name='index_danusan'),
