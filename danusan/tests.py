@@ -24,11 +24,11 @@ class UnitTest(TestCase):
 		response = self.client.get('/danusan/get_danusan/')
 		self.assertEqual(response.status_code, 200)
 
-	# def test_add_danusan(self):
-	# 	#################
-	# 	response = self.client.post('/danusan/add_danusan/',
-	# 		{'image': "link", 'name': "Bakso", 'price': "15000"})
-	# 	self.assertEqual(response.status_code, 302)
+	def test_add_danusan(self):
+		#################
+		response = self.client.post('/danusan/add_danusan/',
+			{'image': "link", 'name': "Bakso", 'price': "15000"})
+		self.assertEqual(response.status_code, 302)
 
 	def test_apakah_ada_input_submit(self):
 		response = self.client.get('/danusan/')
@@ -41,13 +41,13 @@ class UnitTest(TestCase):
 		'Tes satu satu hahaha', '087777535288', 'ssrifdiza')
 		self.client.login(email='mohamad.rifqy@ui.ac.id', password='ssrifdiza')
 
-	# def test_apakah_ada_model_danusan_dengan_field_image_name_price_dan_user(self):
-	# # def test_apakah_ada_model_danusan_dengan_field_image_name_dan_price(self):
-	# 	Danusan(image="link", name="Bakso", price="15000", user=self.user).save()
-	# 	# Danusan(image="link", name="Bakso", price="15000").save()
-	# 	all_danusan = Danusan.objects.all()
-	# 	self.assertEqual(all_danusan.count(), 1)
-	# 	self.assertEqual(Danusan.objects.get(id=1).name, "Bakso")
+	def test_apakah_ada_model_danusan_dengan_field_image_name_price_dan_user(self):
+	# def test_apakah_ada_model_danusan_dengan_field_image_name_dan_price(self):
+		Danusan(image="link", name="Bakso", price="15000", user=self.user).save()
+		# Danusan(image="link", name="Bakso", price="15000").save()
+		all_danusan = Danusan.objects.all()
+		self.assertEqual(all_danusan.count(), 1)
+		self.assertEqual(Danusan.objects.get(id=1).name, "Bakso")
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
