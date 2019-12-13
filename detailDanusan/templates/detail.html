@@ -10,10 +10,10 @@
 					<div class="pad">
 						<div class="table-responsive">
 							<center>
-								<img src="{danusan.image}" alt="">
+								<img src="{{danusan.image}}" alt="">
 							</center><br>
-							<p><strong>{danusan.name}</strong></p>
-							<p>Harga: Rp. {danusan.price}</p>
+							<p><strong>{{danusan.name}}</strong></p>
+							<p>Harga: Rp. {{danusan.price}}</p>
 							<p>Date Expire: {{ danusan.datetime|date:'d/m/Y, H:i:s a' }}</p>
 						</div>
 					</div>
@@ -57,7 +57,7 @@
 					<h1 style="margin-left: 60px;">Tulis Review</h1>
 					<div class="pad" style="padding-top: 2%;">
 						<div class="table-responsive">
-							<form method="post">
+							<form method="post" action="{% url 'buat_review' %}"> 
 								{% csrf_token %}
 								<table class="table table-hover">
 								{{ reviewForm.as_table }}	

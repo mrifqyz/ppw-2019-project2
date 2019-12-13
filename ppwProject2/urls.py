@@ -11,7 +11,7 @@ urlpatterns = [
     path('register', registerPage, name='register'),
     path('kelola', include('userApp.urls')),
     path('danusan/', include('danusan.urls')),
-    path('detaildanusan/', include('detailDanusan.urls')),
+    # path('detaildanusan/', include('detailDanusan.urls')),
     path('', include('app1.urls')),
     path('dfj90d21lf@34a12', signOut, name='logout')
 ]

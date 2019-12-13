@@ -4,5 +4,5 @@ from django.shortcuts import render
 from django.conf.urls import url
 
 urlpatterns = [
-	url('',views.main,name='main'),
+	url('',views.detail_danusan,name='detail'),
 ]

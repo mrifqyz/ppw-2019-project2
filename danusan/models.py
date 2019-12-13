@@ -8,10 +8,10 @@ class Danusan(models.Model):
 	name = models.CharField(max_length=30, blank=False)	
 	price = models.PositiveIntegerField(blank=False)
 	datetime = models.DateTimeField(auto_now_add = True)
+	slug = AutoSlugField(populate_from='name')
 
 	User = get_user_model()
 	user = models.ForeignKey(User, on_delete=models.CASCADE)
-	slug = AutoSlugField(populate_from='nama')
 
 	class Meta:
 		ordering = ['datetime']
