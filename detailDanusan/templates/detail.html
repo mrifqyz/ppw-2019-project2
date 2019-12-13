@@ -1,0 +1,72 @@
+{% extends 'template.html' %}
+{% load static %}
+{% block content %}
+
+<div class="all-container">
+		<div class="box-container">
+			<div class="box">
+				<div class="content">
+					<center><h1>Detail Danusan</h1></center>
+					<div class="pad">
+						<div class="table-responsive">
+							<center>
+								<img src="{{danusan.image}}" alt="">
+							</center><br>
+							<p><strong>{{danusan.name}}</strong></p>
+							<p>Harga: Rp. {{danusan.price}}</p>
+							<p>Date Expire: {{ danusan.datetime|date:'d/m/Y, H:i:s a' }}</p>
+						</div>
+					</div>
+
+					<h1 style="margin-left: 60px;">Review</h1>
+					<div class="pad">
+						<div class="table-responsive">
+							<table class="table table-hover">
+								<thead>
+									<th class="table-col" scope="col">
+										Review
+									</th>
+									<th class="table-col" scope="col">
+										Name
+									</th>
+									<th class="table-col" scope="col">
+										Time
+									</th>
+								</thead>
+
+								<tbody class="rev-tab">
+
+								</tbody>
+							</table>
+						</div>
+					</div><br><br>
+
+					<h1 style="margin-left: 60px;">Tulis Review</h1>
+					<div class="pad" style="padding-top: 2%;">
+						<div class="table-responsive">
+							<form method="POST"> 
+								{% csrf_token %}
+								<table class="table table-hover">
+								{{ reviewForm.as_table }}	
+								</table>
+								<br> 
+								<button type="Submit" id="submit" class="btn btn-outline-dark">Post</button>
+								<br><br>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+  	<script type="text/javascript" src="{% static 'review.js' %}"></script>
+{% endblock %}
+
+
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>

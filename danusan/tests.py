@@ -5,7 +5,6 @@ from userApp.models import User
 
 # Create your tests here.
 class UnitTest(TestCase):
-
 	def test_apakah_ada_url_slash(self):
 		response = self.client.get('/danusan/')
 		self.assertEqual(response.status_code, 200)
@@ -49,7 +48,6 @@ class UnitTest(TestCase):
 		all_danusan = Danusan.objects.all()
 		self.assertEqual(all_danusan.count(), 1)
 		self.assertEqual(Danusan.objects.get(id=1).name, "Bakso")
-
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options

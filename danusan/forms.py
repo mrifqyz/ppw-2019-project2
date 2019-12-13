@@ -21,4 +21,3 @@ class DanusanForm(ModelForm):
             
         }
 
-

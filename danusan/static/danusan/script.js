@@ -2,6 +2,7 @@ $(document).ready(() => {
 
 	function addDanusan(danusan) {
 		let html = "";
+		
 		html += '<tr>';
 
 		html += '<td>';
@@ -20,7 +21,9 @@ $(document).ready(() => {
 		html += '</td>';
 
 		html += '<td>';
+		html += '<a href="/danusan/'+danusan.slug+'">'
 		html += danusan.name;
+		html += '</a>'
 		html += '</td>';
 
 		html += '<td>';
@@ -32,7 +35,9 @@ $(document).ready(() => {
 		html += '</td>';
 
 		html += '</tr>';
+		
 		$(html).appendTo($('tbody'));
+
 	}
 
 	$.ajax({
@@ -47,6 +52,7 @@ $(document).ready(() => {
 
 	$('#button').click(function(event) {
 		event.preventDefault();
+		// console.log("tes");
 		var name = $("#name").val();
 		var price = $("#price").val();
 		var image = $("#image").val();

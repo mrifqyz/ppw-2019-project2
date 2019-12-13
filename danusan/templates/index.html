@@ -1,7 +1,10 @@
 {% extends 'template.html' %}
 {% load static %}
 {% block content %}
+	
 
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
     <script src="{% static 'danusan/script.js' %}"></script>
 
 	<div class="box-container">
@@ -30,6 +33,7 @@
 							</thead>
 							<tbody>
 							{% for danusan in danusans %}
+							{{ danusan.slug }}
 								<tr>
 									<td>
 										{{ forloop.counter }}
