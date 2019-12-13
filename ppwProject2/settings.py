@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'userApp',
     'app1',
     'danusan',
+    'detailDanusan',
 ]
 
 MIDDLEWARE = [

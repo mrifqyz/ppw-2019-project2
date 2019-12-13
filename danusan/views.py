@@ -69,18 +69,3 @@ def danusanJSON(request, kw="", val=""):
     data = json.loads(jsonDanusan)
     toBeReturned = json.dumps(data)
     return HttpResponse(toBeReturned, content_type="application/json")
-
-def detailReview(request):
-    reviewModel = ReviewModel.objects.all()
-    reviewForm = ReviewForm(request.POST or None)
-    if request.method == 'POST':
-        if reviewForm.is_valid():
-            reviewForm.save()
-            return redirect('/')
-
-    args = {
-        'reviewModel' : reviewModel,
-        'reviewForm' : reviewForm,
-    }
-
-    return render(request, 'detail.html', args)
