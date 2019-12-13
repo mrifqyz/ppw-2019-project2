@@ -3,60 +3,43 @@
 
 {% block content %}
 <link rel="stylesheet" href="{% static 'app1.css' %}">
+<script type="text/javascript" src="{% static 'app1.js' %}"></script>
 {% if user.is_authenticated %}
-<div class="container justify-content-start text-left pt-5 mt-3 pb-5 serif" style="max-width: 90%;">
+<div class="container justify-content-start text-left pt-3 mt-3 pb-5 serif" style="max-width: 90%;">
     <h1><b>Selamat datang, {{user.get_full_name}}!</b></h1>
 </div>
-<div class="container justify-content-start text-left pb-4 serif" style="max-width: 90%;">
-    <h3>Hari ini</h3>
-</div>
-<div class="container pb-3" style="max-width: 90%;">
-    <div class="danus-card-deck">
-        <a class="card" style="width: 18rem;" href="">
-            <img src="https://sifu.unileversolutions.com/image/id-ID/recipe-topvisual/2/1260-709/risoles-mayonnaise-50425752.jpg"
-                class="danus-img card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Risol Mayo</h5>
-                <h5 class="card-title">Rp6.000</h5>
-                <p class="card-text mt-4">Risol isi mayonnaise, daging asap, dan telur rebus</p>
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">Until December 10, 2019</h6>
-                <h6 class="card-title">Contact 14045</h6>
-            </div>
-        </a>
-    </div>
-</div>
-<button class="btn mt-5 mb-5">Tambah</button>
 {% else %}
 <div class="container justify-content-center text-center p-5" style="max-width: 60%;">
-    <image class="png" src="image.png"></image>
+    <image class="png" src="{% static 'Asset 5@2x.png' %}" style="max-width: 100%;"></image>
     <h1 class="serif">DNA</h1>
     <h3>Sebuah platform buat kamu yang ingin berbisnis di kampus dan buat kamu yang ingin menghabiskan uang kamu
     </h3>
 </div>
+{% endif %}
 <div class="container pb-5" style="max-width: 90%;">
     <h3 class="pb-4 serif">Hari ini</h3>
     <div class="danus-card-deck">
-        <a class="card" style="width: 18rem;" href="">
-            <img src="https://sifu.unileversolutions.com/image/id-ID/recipe-topvisual/2/1260-709/risoles-mayonnaise-50425752.jpg"
-                class="danus-img card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Risol Mayo</h5>
-                <h5 class="card-title">Rp6.000</h5>
-                <p class="card-text mt-4">Risol isi mayonnaise, daging asap, dan telur rebus</p>
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">Until December 10, 2019</h6>
-                <h6 class="card-title">Contact 14045</h6>
-            </div>
-        </a>
     </div>
 </div>
+{% if user.is_authenticated %}
+<div class="container justify-content-center text-center" style="max-width: 90%;">
+    <button class="btn mt-5 mb-5">Tambah</button>
+</div>
+{% else %}
 <div class="container justify-content-start text-left pb-5" style="max-width: 90%;">
     <h4>Yuk bergabung dengan kami sekarang juga dan mulailah ngedanus!</h4>
     <button class="btn mt-4 mb-4">Sign up</button>
 </div>
 {% endif %}
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
 
 {% endblock %}
