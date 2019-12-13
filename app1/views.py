@@ -13,11 +13,9 @@ def bantuan(request):
 def submit(request):
     if request.method == "POST" :
         pertanyaan = request.POST['pertanyaan']
-        jawaban = request.POST['jawaban']
         nama = request.POST['nama']
 
         bantuan_baru = Bantuan(pertanyaan = pertanyaan,
-                               jawaban = jawaban,
                                nama = nama)
 
         bantuan_baru.save()
