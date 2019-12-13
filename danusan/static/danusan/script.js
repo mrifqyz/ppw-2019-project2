@@ -67,7 +67,7 @@ $(document).ready(() => {
 		})
 	})
 
-	$('input').onKeyUp(function (event) {
+	$('input').keyup(function (event) {
 		if (event.keyCode === 13) {
 			$('#button').click();
 		}
