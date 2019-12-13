@@ -9,10 +9,6 @@ class UnitTest(TestCase):
 		response = Client().get('//')
 		self.assertEqual(response.status_code, 200)
 
-	def test_url_memanggil_detailDanusanviews(self):
-		found = resolve('/')
-		self.assertEqual(found.func, main)
-
 	def test_views_memanggil_html_detailDanusan(self):
 		response = Client().get('//')
 		self.assertTemplateUsed(response, 'main.html')
