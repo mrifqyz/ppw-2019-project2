@@ -38,7 +38,7 @@ class UnitTest(TestCase):
     
     def test_ada_gambar_di_homepage(self):
         response = Client().get('')
-        self.assertContains(response, 'image.png')
+        self.assertContains(response, 'Asset 5@2x.png')
 
     def test_ada_button_sign_up_di_homepage(self):
         response = Client().get('')

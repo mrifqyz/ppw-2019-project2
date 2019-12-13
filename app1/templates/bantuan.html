@@ -11,9 +11,9 @@
 {% for bantuan in list_bantuan %}
 {% endfor %}
 
-<div class="container justify-content-start text-left" style="max-width: 90%;">
+<div class="container justify-content-start text-left mb-4" style="max-width: 90%;">
     <h2 class="serif mb-4">Punya Pertanyaan?</h2>
-    <form method="POST">
+    <form action="/submit" method="POST">
         {% csrf_token %}
 
         <div class="flex-col mb-3">
