@@ -1,6 +1,6 @@
 from django.forms import ModelForm, Form
 from django import forms
-from .models import Danusan
+from .models import Danusan, DanusanDetail, ReviewModel
 
 
 class DanusanForm(ModelForm):
