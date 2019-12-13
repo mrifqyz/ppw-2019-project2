@@ -1,6 +1,6 @@
 from django.urls import path, re_path
 from .views import index, add_danusan, get_danusan, login, danusanJSON#, delete_danusan
-from detailDanusan.views import detail_danusan, buat_review
+from detailDanusan.views import detail_danusan
 
 urlpatterns = [
 	path('', index, name='index_danusan'),
@@ -13,5 +13,5 @@ urlpatterns = [
 	path("jsondata", danusanJSON),
 	# re_path(r'^(?P<slug>[\w-]+)', detail_danusan)
 	re_path(r'^(?P<slug>[\w-]+)', detail_danusan, name='detail_danusan' ),
-	path('buat_review', buat_review, name='buat_review')
+	# path('buat_review', buat_review, name='buat_review')
 ]
