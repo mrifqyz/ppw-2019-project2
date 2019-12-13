@@ -24,7 +24,7 @@ $(document).ready(() => {
       let semuaDanus = response.items
       console.log(response);
 
-      for (let i = 0; i < 3; i++) {
+      for (let i = response.length-1; i > response.length-4; i--) {
         let field = response[i].fields;
         let $h5 = $("<h5>").addClass("card-title").text(field.name);
         let $h6 = $("<h6>").addClass("card-title").text("Rp. " + field.price);
@@ -42,7 +42,7 @@ $(document).ready(() => {
         let $cardBody = $("<div>").addClass("card-body").append($h5, $h6, $p, timestamp);
         let $card = $("<div>").addClass("card").css({ "width": "18rem" }).append(divImg, $cardBody);
 
-        $cardDanus.append($("<div>").addClass("col my-2").append($card));
+        $cardDanus.append($("<div>").append($card));
       }
     }
   })
