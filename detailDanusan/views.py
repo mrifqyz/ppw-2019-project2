@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 # import requests
 from .forms import ReviewForm
 from .models import ReviewModel
+from danusan.models import Danusan
 
 def main(request):
 	reviewModel = ReviewModel.objects.all()
@@ -17,3 +18,4 @@ def main(request):
 	}
 
 	return render(request, 'detail.html', args)
+
