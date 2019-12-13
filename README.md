@@ -1,3 +1,9 @@
+## Pipeline Status:
+[![pipeline status](https://gitlab.com/mrifqyz/ppw-tk2/badges/master/pipeline.svg)](https://gitlab.com/mrifqyz/ppw-tk2/commits/master)
+
+## Coverage Percentage:
+[![coverage report](https://gitlab.com/mrifqyz/ppw-tk2/badges/master/coverage.svg)](https://gitlab.com/mrifqyz/ppw-tk2/commits/master)
+
 ## Anggota:
 1. Kezia Sulami
 2. Mohamad Rifqy Zulkarnaen
