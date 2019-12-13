@@ -67,9 +67,25 @@ $(document).ready(() => {
 		})
 	})
 
-	$('input').keyup(function (event) {
+	$('#name')[0].unbind();
+	$('#name')[0].bind('keyup', function (event) {
 		if (event.keyCode === 13) {
 			$('#button').click();
 		}
 	});
+
+	$('#image')[0].unbind();
+	$('#image')[0].bind('keyup', function (event) {
+		if (event.keyCode === 13) {
+			$('#button').click();
+		}
+	});
+
+	$('#price')[0].unbind();
+	$('#price')[0].bind('keyup', function (event) {
+		if (event.keyCode === 13) {
+			$('#button').click();
+		}
+	});
+
 })
