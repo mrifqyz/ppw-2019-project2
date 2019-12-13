@@ -2,9 +2,9 @@
 {% load static %}
 {% block content %}
 {% if user.is_authenticated %}
-<div class="content row m-5">
+<div class="content row m-5 flex-col-left">
     <div class="info-container flex-row-left">
-        <div class="col-md-2">
+        <!-- <div class="col-md-2"> -->
             <div class="img-circle mr-4">
                 {% if user.img  %}
                 <img src="{{user.img.url}}" alt="">
@@ -12,7 +12,7 @@
                 <img src="{% static 'favicon.png' %}" alt="">
                 {% endif %}
             </div>
-        </div>
+        <!-- </div> -->
 
         <!-- <div class="col"> -->
             <div class="text-container flex-col-left">
