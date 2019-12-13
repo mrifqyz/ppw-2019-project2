@@ -6,7 +6,7 @@ from .models import ReviewModel
 
 class UnitTest(TestCase):
 	def test_apakah_url_bisa_diakses (self):
-		response = Client().get('//')
+		response = Client().get('/danusan/kucing/')
 		self.assertEqual(response.status_code, 200)
 
 	# def test_views_memanggil_html_detailDanusan(self):
@@ -14,18 +14,18 @@ class UnitTest(TestCase):
 	# 	self.assertTemplateUsed(response, 'detail.html')
 
 	def test_apakah_punya_box_form(self):
-		response = Client().get('//')
+		response = Client().get('/danusan/kucing/')
 		content = response.content.decode('utf8')
 		self.assertIn("<form", content)
 
 	def test_apakah_ada_button_submit(self):
-		response = Client().get('//')
+		response = Client().get('/danusan/kucing/')
 		content = response.content.decode('utf8')
 		self.assertIn("<button", content) 
 		self.assertIn("Post", content) 
 
 	def test_ada_table_isi_review(self):
-		response = Client().get('//')
+		response = Client().get('/danusan/kucing/')
 		content = response.content.decode('utf8')
 		self.assertIn("<table", content) 
 		self.assertIn("Review", content) 
