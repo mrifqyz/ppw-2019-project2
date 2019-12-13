@@ -2,7 +2,7 @@ $(document).ready(() => {
 
 	function addDanusan(danusan) {
 		let html = "";
-		// html += '<a href="/danusan/'+danusan.slug+'">'
+		
 		html += '<tr>';
 
 		html += '<td>';
@@ -21,7 +21,9 @@ $(document).ready(() => {
 		html += '</td>';
 
 		html += '<td>';
-		html += danusan.slug;
+		html += '<a href="/danusan/'+danusan.slug+'">'
+		html += danusan.name;
+		html += '</a>'
 		html += '</td>';
 
 		html += '<td>';
@@ -33,7 +35,7 @@ $(document).ready(() => {
 		html += '</td>';
 
 		html += '</tr>';
-		// html += '</a>'
+		
 		$(html).appendTo($('tbody'));
 
 	}

@@ -45,14 +45,6 @@ class UnitTest(TestCase):
 		review_status = ReviewModel.objects.all().count()
 		self.assertEqual(review_status, 1)
 
-	def test_apakah_models_masuk_ke_page(self):
-		data={
-		'nama':'Icha',
-		'review':'Enak kak'
-		}
-		response = self.client.post('/danusan/'+self.danusan.slug, data=data, follow=True)
-		self.assertIn('Icha', response.content.decode())
-
 	def test_url_kalo_gaada_danusannya(self):
 		response = Client().get('/danusan/kucing')
 		self.assertTemplateUsed("index.html")

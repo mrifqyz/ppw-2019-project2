@@ -1,5 +1,6 @@
-from django.shortcuts import render, redirect
-from django.http import JsonResponse
+from django.shortcuts import render, redirect, HttpResponse
+from django.core import serializers
+import json
 # import requests
 from .forms import ReviewForm
 from .models import ReviewModel
@@ -31,6 +32,17 @@ def detail_danusan(request, slug):
 			return render(request, 'detail.html', args)
 	else:
 		return redirect('/danusan')
+
+def reviewToAPI(request, danusan):
+	if(danusan=="all"):
+		listReview = ReviewModel.objects.all()
+	else:
+		danusanObject = Danusan.objects.filter(slug=danusan)
+		listReview = ReviewModel.objects.filter(detail=list(danusanObject)[0])
+	jsonReview = serializers.serialize("json", listReview)
+	data = json.loads(jsonReview)
+	toBeReturned = json.dumps(data)
+	return HttpResponse(toBeReturned, content_type="application/json")
 
 
 

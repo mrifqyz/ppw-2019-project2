@@ -4,6 +4,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from userApp.views import loginPage, registerPage, signOut
+from detailDanusan.views import reviewToAPI
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -13,7 +14,8 @@ urlpatterns = [
     path('danusan/', include('danusan.urls')),
     # path('detaildanusan/', include('detailDanusan.urls')),
     path('', include('app1.urls')),
-    path('dfj90d21lf@34a12', signOut, name='logout')
+    path('dfj90d21lf@34a12', signOut, name='logout'),
+    path('reviewAPI&=<slug:danusan>', reviewToAPI)
 ]
 
 if settings.DEBUG:
