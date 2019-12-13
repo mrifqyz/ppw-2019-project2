@@ -69,6 +69,10 @@ footer p {
 }
 
 .mw200{
+    max-width: 30vw;
+}
+
+.min30vw{
     min-width: 30vw;
 }
 
@@ -132,8 +136,8 @@ footer p {
 }
 
 .img-circle img{
-    width: auto;
-    height: 200px;
+    width: 100%;
+    height: auto;
 }
 
 .flex-col-left{

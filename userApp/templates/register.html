@@ -1,48 +1,51 @@
 {% extends 'footer.html' %}
 {% load static %}
 {% block content %}
-<div class="box-container flex-col-center mw200">
-    <div class="logo-container flex-col-center mx-5 mt-5 mb-3">
-        <a href="/kelola"><img src="{% static 'dna.png' %}" alt="" id="logo"></a>
-        <p class="disabled-text text-14 text-center mt-2">Buat akun dan mulailah berbisnis<br>sekarang</p>
+<div class="content flex-col-center">
+
+    <div class="box-container flex-col-center min30vw">
+        <div class="logo-container flex-col-center mx-5 mt-5 mb-3">
+            <a href="/kelola"><img src="{% static 'dna.png' %}" alt="" id="logo"></a>
+            <p class="disabled-text text-14 text-center mt-2">Buat akun dan mulailah berbisnis<br>sekarang</p>
+        </div>
+        <div class="form-container ">
+            <form action="{% url 'register' %}" method="POST" class="flex-col-center">
+                {% csrf_token %}
+                <div class="form-unit my-1 mx-4">
+                    {{form.fullname}}
+                </div>
+    
+                <div class="form-unit my-1 mx-4">
+                    {{form.bio}}
+                </div>
+    
+                <div class="form-unit my-1 mx-4">
+                    {{form.phone}}
+                </div>
+    
+                <div class="form-unit my-1 mx-4">
+                    {{form.username}}
+                </div>
+    
+                <div class="form-unit my-1 mx-4">
+                    {{form.password1}}
+                </div>
+    
+    
+                <div class="form-unit my-1 mx-4">
+                    {{form.password2}}
+                </div>
+    
+                <div class="form-unit mt-3 mb-5 mx-4 ">
+                    <button type="submit" class="btn btn-submit">Sign up</button>
+                </div>
+    
+            </form>
+        </div>
     </div>
-    <div class="form-container ">
-        <form action="{% url 'register' %}" method="POST" class="flex-col-center">
-            {% csrf_token %}
-            <div class="form-unit my-1 mx-4">
-                {{form.fullname}}
-            </div>
-
-            <div class="form-unit my-1 mx-4">
-                {{form.bio}}
-            </div>
-
-            <div class="form-unit my-1 mx-4">
-                {{form.phone}}
-            </div>
-
-            <div class="form-unit my-1 mx-4">
-                {{form.username}}
-            </div>
-
-            <div class="form-unit my-1 mx-4">
-                {{form.password1}}
-            </div>
-
-
-            <div class="form-unit my-1 mx-4">
-                {{form.password2}}
-            </div>
-
-            <div class="form-unit mt-3 mb-5 mx-4 ">
-                <button type="submit" class="btn btn-submit">Sign up</button>
-            </div>
-
-        </form>
+    
+    <div class="box-container flex-col-center min30vw mt-3 mb-5">
+        <p class='m-4'>Punya akun? <a href="/login">Sign in</a></p>
     </div>
-</div>
-
-<div class="box-container flex-col-center mw200 mt-3 mb-5">
-    <p class='m-4'>Punya akun? <a href="/login">Sign in</a></p>
 </div>
 {% endblock %}
